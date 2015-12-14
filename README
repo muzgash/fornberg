@@ -1,0 +1,13 @@
+Implementación del algoritmo de Fornberg para los coeficientes de las derivadas en diferencias finitas.
+http://amath.colorado.edu/faculty/fornberg/Docs/MathComp_88_FD_formulas.pdf
+
+Consiste de dos funciones:
+
+void fornberg_weigths(int M, int p, int *alpha_nu, float *delta)
+Esta función calcula los coeficientes de la derivada de orden M hasta orden de aproximación p
+con el arreglo de coordenadas alpha_nu(que indica si es derivada centrada, hacia la derecha o hacia la izquierda)
+y guarda dichos coeficientes en el arreglo delta.
+
+float get_weight(int N, int m, int n, int v, float *vector)
+Retorna el peso de la derivada en diferencias finitas de orden m con orden de aproximación n
+en la posición v tomado del vector de coeficientes hallado con la funcion fornberg_weights.
